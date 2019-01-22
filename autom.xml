@@ -1,0 +1,14 @@
+﻿<SchemaCatalog xmlns="http://schemas.microsoft.com/xsd/catalog">
+  <Schema href="C:/Users/vrmaheshuni/Desktop/Autom/XSD/testcase.xsd" 
+	  targetNamespace="http://sumtotalsystems.com" />
+  <Schema href="C:/Users/vrmaheshuni/Desktop/Autom/XSD/testdata.xsd" 
+	  targetNamespace="http://sumtotalsystems.com" />
+  <Schema href="C:/Users/vrmaheshuni/Desktop/Autom/XSD/testsuite.xsd" 
+	  targetNamespace="http://sumtotalsystems.com" />
+  <Schema href="C:/Users/vrmaheshuni/Desktop/Autom/XSD/identifiers.xsd" 
+	  targetNamespace="http://sumtotalsystems.com" />
+  <Association extension="tc" schema="C:/Users/vrmaheshuni/Desktop/Autom/XSD/testcase.xsd"/>
+  <Association extension="td" schema="C:/Users/vrmaheshuni/Desktop/Autom/XSD/testdata.xsd"/>
+  <Association extension="id" schema="C:/Users/vrmaheshuni/Desktop/Autom/XSD/identifiers.xsd"/>
+  <Association extension="ts" schema="C:/Users/vrmaheshuni/Desktop/Autom/XSD/testsuite.xsd"/>
+</SchemaCatalog>

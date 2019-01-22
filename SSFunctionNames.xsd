@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+  <xs:include schemaLocation="sstestcase.xsd"/>  
+
+  <!--This will allow all strings. Not used now-->
+  <xs:simpleType name="SSExtendedfunctionNames">
+    <xs:union memberTypes="ssfunctionNames xs:string"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="ssfunctionNames">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CreateUser"/>
+      <xs:enumeration value="Create User Hierarchy for Hiring Administrators"/>
+	    <xs:enumeration value="Create User Hierarchy for Recruiters"/>
+	    <xs:enumeration value="CreateMultipleUsers"/>
+	    <xs:enumeration value="CreateWorkLocation"/>  
+	    <xs:enumeration value="Create Work Locations"/>
+	    <xs:enumeration value="CreateReferralPlan"/>  
+	    <xs:enumeration value="Create Referral Plans"/>
+	    <xs:enumeration value="Logoff"/>  
+	    <xs:enumeration value="LoginUser"/>
+      <xs:enumeration value="SelectUser"/>
+	    <xs:enumeration value="Check for Pending status for a newly created requisition"/>  
+	    <xs:enumeration value="Fill Details in General Tab"/>
+	    <xs:enumeration value="Fill Details in Requirements Tab"/>  
+	    <xs:enumeration value="Fill Details in Job Posting Tab"/>
+	    <xs:enumeration value="Fill Details in Configuration Tab"/>  
+	    <xs:enumeration value="Fill Details in Hiring Team Tab"/>
+      <xs:enumeration value="Open Candidates Tab for an approved requisition"/>
+      
+      <xs:enumeration value="Hiring Process Assessment"/>
+      <xs:enumeration value="Hiring Process Note"/>
+      <xs:enumeration value="Hiring Process Email"/>
+      <xs:enumeration value="Hiring Process Set Candidate Status"/>
+      <xs:enumeration value="Hiring Process Interview Scheduling"/>
+      <xs:enumeration value="Hiring Process Interview Assessment"/>
+      <xs:enumeration value="Hiring Process Background Check"/>
+      <xs:enumeration value="Hiring Process Reference Check"/>
+      <xs:enumeration value="Hiring Process Offer Position"/>
+      <xs:enumeration value="Hiring Process Candidate Outcome"/>
+      <xs:enumeration value="Hiring Process Onboard Candidate"/>
+      <xs:enumeration value="External Candidate Login"/>
+      <xs:enumeration value="Logoff"/>  
+	    <xs:enumeration value="LoginUser"/>
+      <xs:enumeration value="Create a New Requisition from scratch"/>
+      <xs:enumeration value="Internal Candidates apply for Requisition"/>
+      <xs:enumeration value="Internal Candidates apply for Requisition through Manager"/>
+      <xs:enumeration value="Internal Candidates apply for Requisition through login"/>
+      <xs:enumeration value="External Candidates apply for Requisition"/>
+      <xs:enumeration value="Validate the Complete Hiring Process for External Candidate"/>
+      <xs:enumeration value="Validate the Complete Hiring Process for Internal Candidate"/>
+      <xs:enumeration value="Create a requisition by copying from another requisition"/>
+
+      <xs:enumeration value="Creates a new RDM Calibration"/>
+      <xs:enumeration value="Creates a new RDM Process"/>
+      <xs:enumeration value="Create a new RDM Survey"/>
+      <xs:enumeration value="Create a new PM Survey"/>
+      <xs:enumeration value="Activate PM Survey"/>
+
+      <xs:enumeration value="SelectPermissionsForSingleField"/>
+      <xs:enumeration value="SelectPermissionsForMultiField"/>
+      <xs:enumeration value="CreateNewSurvey"/>
+      <xs:enumeration value="SelectPermissionsInSecurityMatrix"/>
+      <xs:enumeration value="SelectActionAndVerifyStatusForSurvey"/>
+      <xs:enumeration value="CreateNewSurveyBasic"/>
+      <xs:enumeration value="DeletePMSurvey"/>
+      <xs:enumeration value="Admin deletes the PM survey"/>
+      <xs:enumeration value="Admin activates the PM survey"/>
+      <xs:enumeration value="Create a Survey for PM which includes Objectives, Competenies,Goals and Summary"/>
+      <xs:enumeration value="CreatePMProcessBasic"/>
+      <xs:enumeration value="DeletePMProcess"/>
+      <xs:enumeration value="CreateNewSurvey2"/>
+      <xs:enumeration value="SignatureSection"/>
+      <xs:enumeration value="Creates a new Performance Process"/>
+
+      <xs:enumeration value="AssignTaskToEmployee"/>
+      <xs:enumeration value="Admin creates a Process of type Performance"/>
+      <xs:enumeration value="EditTabs"/>
+      <xs:enumeration value="PM Worflow Step1"/>
+      <xs:enumeration value="NavigateToReports"/>
+      <xs:enumeration value="RunPMProcessReport"/>
+      <xs:enumeration value="CreateBatchStageTask"/>
+      <xs:enumeration value="360FeedbackWorkflowStep"/>
+      <xs:enumeration value="Create360Survey"/>
+      <xs:enumeration value="Create360FeedbackProcess"/>
+      <xs:enumeration value="MyAssessmentSelectPeople"/>
+      <xs:enumeration value="MyAssessmentGiveFeedback"/>
+      <xs:enumeration value="VerifySurveyCreated"/>
+      <xs:enumeration value="VerifyProcessCreated"/>
+      <xs:enumeration value="360Feedback_360FeedbackWorkflowStep"/>
+      <xs:enumeration value="TestReportlet"/>
+      <xs:enumeration value="REPLACE_THIS"/>
+      <xs:enumeration value="REPLACE_THIS"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--This will allow all strings. Not used now-->
+  <xs:simpleType name="SSExtendedfunctionPath">
+    <xs:union memberTypes="ssfunctionPath xs:string"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="ssfunctionPath">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Content.tc"/>
+      <xs:enumeration value="Processes.tc"/>
+      <xs:enumeration value="PerformanceModule.tc"/>
+
+      
+      <xs:enumeration value="/testcases/_common/common.tc"/>
+      <xs:enumeration value="/testcases/APIs/Admin/System/System.tc"/>
+      <xs:enumeration value="/testcases/APIs/Development/Development.tc"/>
+      <xs:enumeration value="/testcases/APIs/Reports/Reports.tc"/>
+      <xs:enumeration value="/testcases/APIs/Performance/MyAssessments/MyAssessments.tc"/>
+      <xs:enumeration value="/testcases/APIs/Admin/Tasks/Tasks.tc"/>
+      <xs:enumeration value="/testcases/APIs/_APIUtility/APIUtility.tc"/>
+      <xs:enumeration value="/testcases/APIs/Admin/Content/Content.tc"/>
+      <xs:enumeration value="/testcases/APIs/Admin/Users/Users.tc"/>
+      <xs:enumeration value="/testcases/APIs/Admin/Hiring/hiring.tc"/>
+      <xs:enumeration value="/testcases/APIs/Hiring/Requisitions/requisitions.tc"/>
+      <xs:enumeration value="/testcases/Executables/_ExeUtility/_ExeUtility.tc"/>
+      <xs:enumeration value="/testcases/Executables/Hiring/hiring.tc"/>
+      <xs:enumeration value="/testcases/APIs/Admin/Content/Processes/Processes.tc"/>
+      <xs:enumeration value="/testcases/APIs/Admin/Performance/Performance.tc"/>
+
+      <xs:enumeration value="REPLACE_THIS"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+</xs:schema>

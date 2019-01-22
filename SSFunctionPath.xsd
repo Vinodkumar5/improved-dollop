@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+  <!--<xs:include schemaLocation="sstestcase.xsd"/>-->  
+
+  <!--This will allow all strings. Not used now-->
+  <xs:simpleType name="SSExtendedfunctionPath">
+    <xs:union memberTypes="ssfunctionPath xs:string"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="ssfunctionPath">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="/testcases/_common/common.tc"/>
+	  <xs:enumeration value="/testcases/APIs/_APIUtility/APIUtility.tc"/>
+	  <xs:enumeration value="/testcases/APIs/Admin/Users/Users.tc"/>
+	  <xs:enumeration value="/testcases/APIs/Admin/Hiring/hiring.tc"/>
+      <xs:enumeration value="/testcases/APIs/Hiring/Requisitions/requisitions.tc"/>
+      <xs:enumeration value="/testcases/Executables/_ExeUtility/_ExeUtility.tc"/>
+	  <xs:enumeration value="/testcases/Executables/Hiring/hiring.tc"/>
+      <xs:enumeration value="/testcases/APIs/Admin/Content/Processes/Processes.tc"/>
+      <xs:enumeration value="/testcases/APIs/Admin/Performance/Performance.tc"/>
+      <xs:enumeration value="/testcases/APIs/Admin/Content/Content.tc"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+
+</xs:schema>

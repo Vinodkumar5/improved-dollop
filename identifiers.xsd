@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="controls">
+	  <xs:annotation>
+		  <xs:documentation xml:lang="en">
+			  All controls are declared within 'controls' section
+		  </xs:documentation>
+	  </xs:annotation>
+    <xs:complexType>
+      <xs:choice  minOccurs="1" maxOccurs="unbounded">
+        <xs:element maxOccurs="unbounded" name="control">
+			<xs:annotation>
+				<xs:documentation xml:lang="en">
+					Individual controls are declared with the variable name and id
+				</xs:documentation>
+			</xs:annotation>
+          <xs:complexType>
+			  <xs:attribute name="name" type="xs:string" use="required" >
+				  <xs:annotation>
+					  <xs:documentation xml:lang="en">
+						  Variable name given to the control, which will be referred in the test cases.
+					  </xs:documentation>
+				  </xs:annotation>
+			  </xs:attribute>
+            <xs:attribute name="id" type="xs:string" use="required" >
+				 <xs:annotation>
+					  <xs:documentation xml:lang="en">
+						  The element locator which can be an id, xpath or text.
+					  </xs:documentation>
+				  </xs:annotation>
+			  </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element maxOccurs="unbounded" name="include">
+			<xs:annotation>
+				<xs:documentation xml:lang="en">
+					Includes other identifier files. Once included those controls too can be accessed in testcase referring to this identifier file.
+				</xs:documentation>
+			</xs:annotation>
+          <xs:complexType>
+			  <xs:attribute name="path" type="xs:string" use="required" >
+				  <xs:annotation>
+					  <xs:documentation xml:lang="en">
+						  The path of the identifier file(.id) which has to be included.
+					  </xs:documentation>
+				  </xs:annotation>
+			  </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+
+      </xs:choice>
+		<xs:attribute name="version" type="xs:decimal" use="required" >
+			<xs:annotation>
+				<xs:documentation xml:lang="en">
+					Framework version.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	    <xs:element name="datasets">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				All data within test data file are placed within 'datasets' section which is the root element
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+		<xs:sequence>
+		<xs:element name="testcase" maxOccurs="unbounded">
+		  <xs:annotation>
+				<xs:documentation xml:lang="en">
+							All test data of particular test case are placed under 'testcase' section. Can hold multiple dataset sections
+				</xs:documentation>
+		  </xs:annotation>
+		  <xs:complexType>
+			<xs:sequence>							
+              <xs:element name="dataset" maxOccurs="unbounded" >
+				  <xs:annotation>
+					  <xs:documentation xml:lang="en">
+						  A 'dataset' section refers to one set of testdata to run the specified test case. A testcase can have multiple data set section .
+					  </xs:documentation>
+				  </xs:annotation>
+				<xs:complexType>
+                  <xs:choice  minOccurs="1" maxOccurs="unbounded">
+										<xs:element name="include">
+											<xs:annotation>
+												<xs:documentation xml:lang="en">
+													Include dataset of another testcase
+												</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="path" type="xs:string" use="required" >
+													<xs:annotation>
+														<xs:documentation xml:lang="en">
+															Path of the test data file which has to be included relative to the XML base path
+														</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="name" type="xs:string" use="required" >
+														<xs:annotation>
+														<xs:documentation xml:lang="en">
+															Dataset name of the included testdata
+														</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="testcasename" type="xs:string" use="required" >
+														<xs:annotation>
+														<xs:documentation xml:lang="en">
+															Testcase name of the dataset to be included
+														</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="map" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation xml:lang="en">
+													Maps the test data with the test case variable
+												</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="var" type="xs:string" use="required" >
+													<xs:annotation>
+														<xs:documentation xml:lang="en">
+															Variable name specified in the testcase.
+														</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="value" type="xs:string" use="required" >
+													<xs:annotation>
+														<xs:documentation xml:lang="en">
+															Value to be passed to the testcase
+														</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:choice>
+					<xs:attribute name="name" type="xs:string" use="required" >
+						<xs:annotation>
+							<xs:documentation xml:lang="en">
+								Dataset name. Should be unique within a testcase section. Mandatory field.
+							</xs:documentation>
+							</xs:annotation>
+					</xs:attribute>
+				  <xs:attribute name="ref" use="required">
+					  <xs:annotation>
+						  <xs:documentation xml:lang="en">
+							 Reference value. Currently to be 'none'. To be used later when the test data comes from a db or another source.
+						  </xs:documentation>
+					  </xs:annotation>
+                    <xs:simpleType>
+											<xs:restriction base="xs:string">																								
+												<xs:enumeration value="none"/>
+											</xs:restriction>                      
+										</xs:simpleType>                  
+									</xs:attribute>
+				</xs:complexType>
+			  </xs:element>
+            </xs:sequence>
+			  <xs:attribute name="name" type="xs:string" use="required" >
+				  <xs:annotation>
+					  <xs:documentation xml:lang="en">
+						  Test case name. Should exactly match the name in *.tc
+					  </xs:documentation>
+				  </xs:annotation>
+			  </xs:attribute>
+			  <xs:attribute name="version" type="xs:string" use="optional" />
+		</xs:complexType>
+	  </xs:element>
+	</xs:sequence>
+			<xs:attribute name="version" type="xs:decimal" use="required" >
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Framework version
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
